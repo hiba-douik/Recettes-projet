@@ -1,38 +1,109 @@
-.App {
-  text-align: center;
+/* Styles de base */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f7f7f7; /* Couleur de fond douce */
+  color: #333; /* Couleur du texte */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Barre latérale */
+.sidebar {
+  width: 250px;
+  background-color: #ffcc00; /* Jaune */
+  height: 100vh; /* Hauteur de la fenêtre */
+  padding: 20px;
+  position: fixed; /* Fixe la barre latérale */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.sidebar h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin: 10px 0;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: #333; /* Couleur du lien */
+  font-weight: bold;
+}
+
+/* Contenu principal */
+.content {
+  margin-left: 260px; /* Espace pour la barre latérale */
+  padding: 20px;
+}
+
+.content h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+/* Cartes de recettes */
+.recipe-card {
+  background-color: #fff; /* Fond blanc pour les cartes */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 15px 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Ombre légère */
+  transition: transform 0.2s, box-shadow 0.2s; /* Animation douce */
+}
+
+.recipe-card:hover {
+  transform: scale(1.02); /* Légère augmentation à l'hover */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2); /* Ombre plus forte à l'hover */
+}
+
+.recipe-card img {
+  max-width: 100%; /* Image responsive */
+  border-radius: 8px;
+}
+
+.recipe-card h3 {
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+.recipe-card p {
+  margin: 10px 0;
+}
+
+/* Boutons */
+button {
+  padding: 10px 15px;
+  background-color: #4CAF50; /* Vert */
   color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-.App-link {
-  color: #61dafb;
+button:hover {
+  background-color: #45a049; /* Vert plus foncé à l'hover */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+button:focus {
+  outline: none; /* Supprimer le contour par défaut */
+}
+
+/* Styles Responsifs */
+@media (max-width: 768px) {
+  .sidebar {
+      width: 100%; /* Barre latérale pleine largeur sur mobile */
+      height: auto; /* Hauteur auto */
+      position: relative; /* Position relative */
   }
-  to {
-    transform: rotate(360deg);
+  
+  .content {
+      margin-left: 0; /* Pas d'espace pour la barre latérale */
   }
 }

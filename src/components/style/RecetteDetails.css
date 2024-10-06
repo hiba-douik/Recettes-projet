@@ -1,0 +1,14 @@
+h3 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+p {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+strong {
+    color: #4CAF50; /* Couleur pour les labels */
+}

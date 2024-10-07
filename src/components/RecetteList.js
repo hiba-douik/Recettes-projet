@@ -11,12 +11,12 @@ function RecetteList() {
   }, []);
 
   const loadRecettes = async () => {
-    const result = await axios.get('http://localhost:8081/api/recettes');
+    const result = await axios.get('http://localhost:8082/recettes');
     setRecettes(result.data);
   };
 
   const deleteRecette = async (id) => {
-    await axios.delete(`http://localhost:8081/api/recettes/${id}`);
+    await axios.delete(`http://localhost:8082/recettes/delete/${id}`);
     loadRecettes(); // Reload the list after deletion
   };
 
@@ -28,9 +28,9 @@ function RecetteList() {
         {recettes.map((recette) => (
           <li key={recette.recipeId}>
             {recette.titre} 
-            <Link to={`/recette/${recette.recipeId}`}>Details</Link>
-            <Link to={`/update-recette/${recette.recipeId}`}>Update</Link>
-            <button onClick={() => deleteRecette(recette.recipeId)}>Delete</button>
+            <Link to={`/recette/${recette.id}`}>Details</Link>
+            <Link to={`/update-recette/${recette.id}`}>Update</Link>
+            <button onClick={() => deleteRecette(recette.id)}>Delete</button>
           </li>
         ))}
       </ul>

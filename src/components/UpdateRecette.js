@@ -21,7 +21,7 @@ function UpdateRecette() {
   }, []);
 
   const loadRecette = async () => {
-    const result = await axios.get(`http://localhost:8081/api/recettes/${id}`);
+    const result = await axios.get(`http://localhost:8082/recettes/${id}`);
     setRecette(result.data);
   };
 
@@ -31,7 +31,7 @@ function UpdateRecette() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await axios.put(`http://localhost:8081/api/recettes/${id}`, recette);
+    await axios.put(`http://localhost:8082/recettes/update/${id}`, recette);
     navigate('/');
   };
 
